@@ -2,6 +2,7 @@ import { LINK_FIELDS } from './link'
 
 export const HEADER = `
   Header {
+    copyright
     navItems {
       link ${LINK_FIELDS({ disableAppearance: true })}
 		}
