@@ -2,7 +2,6 @@ import React from 'react'
 import { Metadata } from 'next'
 
 import { Gutter } from '../../_components/Gutter'
-import { RenderParams } from '../../_components/RenderParams'
 import { getMeUser } from '../../_utilities/getMeUser'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 import LoginForm from './LoginForm'
@@ -10,6 +9,8 @@ import LoginForm from './LoginForm'
 import classes from './index.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+import { RenderParams } from '../../_components/RenderParams'
+
 
 export default async function Login() {
   await getMeUser({
@@ -21,7 +22,7 @@ export default async function Login() {
       <div className={classes.heroImg}>
         <Link href="/">
           <Image 
-            src="/logo-black-svg"
+            src="/logo-black.svg"
             alt="logo"
             width={250}
             height={23}

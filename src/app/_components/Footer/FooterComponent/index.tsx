@@ -15,7 +15,7 @@ const FooterComponent = ({footer}: {footer: Footer}) => {
   const pathname = usePathname();
   const navItems = footer?.navItems || [];
   return (
-    <footer className={noHeaderFooterUrls.includes(pathname) ? classes.height : ' '}>
+    <footer className={noHeaderFooterUrls.includes(pathname) ? classes.hide : ' '}>
       <Gutter>
         <ul className={classes.inclusions}>
           {inclusions.map(inclusion => (
