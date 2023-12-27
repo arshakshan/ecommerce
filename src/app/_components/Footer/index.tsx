@@ -5,8 +5,6 @@ import { Footer } from '../../../payload/payload-types'
 import { fetchFooter } from '../../_api/fetchGlobals'
 import FooterComponent from './FooterComponent'
 
-
-
 export async function Footer() {
   let footer: Footer | null = null
 
@@ -23,7 +21,7 @@ export async function Footer() {
 
   return (
     <>
-      <FooterComponent footer={footer}/>
+      <FooterComponent footer={footer} />
     </>
   )
 }

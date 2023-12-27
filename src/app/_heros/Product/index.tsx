@@ -15,7 +15,6 @@ export const ProductHero: React.FC<{
 
   return (
     <Gutter className={classes.productHero}>
-
       <div className={classes.mediaWrapper}>
         {!metaImage && <div className={classes.placeholder}>No image</div>}
         {metaImage && typeof metaImage !== 'string' && (
@@ -28,7 +27,7 @@ export const ProductHero: React.FC<{
         <div className={classes.categoryWrapper}>
           <div className={classes.categories}>
             {categories?.map((category, index) => {
-              const { title : categoryTitle } = category as Category
+              const { title: categoryTitle } = category as Category
 
               const titleToUse = categoryTitle || 'Untitled category'
 
@@ -37,21 +36,21 @@ export const ProductHero: React.FC<{
               return (
                 <p className={classes.category} key={index}>
                   {titleToUse}
-                  {!isLast && <Fragment>, &nbsp;</Fragment>} <span className={classes.separator}>|</span>
+                  {!isLast && <Fragment>, &nbsp;</Fragment>}{' '}
+                  <span className={classes.separator}>|</span>
                 </p>
               )
             })}
           </div>
           <p className={classes.stock}> In Stock</p>
         </div>
-      <Price product={product} button={false} />
-      <div className={classes.description}>
-        <h6>Description</h6>
-        <p>{description}</p>
-      </div>
+        <Price product={product} button={false} />
+        <div className={classes.description}>
+          <h6>Description</h6>
+          <p>{description}</p>
+        </div>
         <AddToCartButton product={product} className={classes.addToCartButton} />
       </div>
-    
     </Gutter>
   )
 }
