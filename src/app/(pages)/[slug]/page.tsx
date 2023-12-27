@@ -2,17 +2,19 @@ import React from 'react'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
+
 import { Category, Page } from '../../../payload/payload-types'
 import { staticHome } from '../../../payload/seed/home-static'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { Blocks } from '../../_components/Blocks'
-import { Hero } from '../../_components/Hero'
-import { generateMeta } from '../../_utilities/generateMeta'
-import { Gutter } from '../../_components/Gutter'
-import classes from './index.module.scss'
 import Categories from '../../_components/Categories'
+import { Gutter } from '../../_components/Gutter'
+import { Hero } from '../../_components/Hero'
 import Promotion from '../../_components/Promotion'
+import { generateMeta } from '../../_utilities/generateMeta'
+
+import classes from './index.module.scss'
 
 // Payload Cloud caches all files through Cloudflare, so we don't need Next.js to cache them as well
 // This means that we can turn off Next.js data caching and instead rely solely on the Cloudflare CDN
@@ -21,7 +23,6 @@ import Promotion from '../../_components/Promotion'
 // See https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
 export const dynamic = 'force-dynamic'
-
 
 export default async function Page({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
@@ -63,7 +64,7 @@ export default async function Page({ params: { slug = 'home' } }) {
         <section>
           <Hero {...hero} />
           <Gutter className={classes.home}>
-            <Categories categories={ categories } />
+            <Categories categories={categories} />
             <Promotion />
           </Gutter>
         </section>
